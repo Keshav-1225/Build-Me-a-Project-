@@ -1,0 +1,33 @@
+# Visual Studio user-specific files and workspace state
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET / MSBuild build output
+[Bb]in/
+[Oo]bj/
+*.dll
+*.exe
+*.pdb
+*.cache
+
+# NuGet packages restored from packages.config
+packages/
+!packages.config
+
+# Node.js dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Generated Tailwind CSS (built from Assets/CSS/input.css)
+Assets/CSS/output.css
+
+# Temporary and backup files
+*.tmp
+*.bak
+*.swp
+*~
