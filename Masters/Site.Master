@@ -7,15 +7,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - BuildMeAProject</title>
-    <link href="Assets/CSS/output.css" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="<%= ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body>
+<body class="min-w-[1180px] bg-slate-50 font-sans text-slate-900 antialiased">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -36,27 +36,30 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <nav class="flex items-center justify-between bg-slate-900 px-6 py-4 text-white shadow-lg">
-            <a class="flex items-center gap-3 text-lg font-semibold tracking-tight" href="Default.aspx">
-                <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="18px" Width="39px" AlternateText="BuildMeAProject" />
-                <span>BuildMeAProject</span>
-            </a>
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
-            <asp:Menu ID="Menu1"
-                runat="server" 
-                DataSourceID="SiteMapDataSource1" 
-                Orientation="Horizontal"
-                CssClass="text-sm font-medium">
-            </asp:Menu>
-        </nav>
-        <div class="mx-auto w-full max-w-6xl px-6 py-10">
+        <header class="border-b border-slate-200 bg-white">
+            <nav class="mx-auto flex w-[1160px] items-center justify-between py-4" aria-label="Primary navigation">
+                <a class="flex shrink-0 items-center gap-2.5" href="<%= ResolveUrl("~/Default.aspx") %>" aria-label="Build me a project home">
+                    <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" />
+                    <span class="text-lg font-bold leading-none tracking-tight text-slate-950">Build<span class="text-blue-600">me</span> a project</span>
+                </a>
+                <div class="flex items-center gap-4 text-sm font-medium text-slate-600 sm:gap-7">
+                    <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Projects.aspx") %>">Projects</a>
+                    <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Requests.aspx") %>">Requests</a>
+                    <a class="transition hover:text-blue-600" href="Projects.aspx#categories">Categories</a>
+                    <a class="rounded-full border border-slate-300 px-3 py-1.5 transition hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Account</a>
+                </div>
+            </nav>
+        </header>
+        <div class="mx-auto w-[1160px]">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr class="my-10 border-slate-200" />
-            <footer class="text-sm text-slate-500">
-                <p>&copy; <%: DateTime.Now.Year %> - BuildMeAProject</p>
-            </footer>
         </div>
+        <footer class="mt-16 border-t border-slate-200 bg-white">
+            <div class="mx-auto flex w-[1160px] items-center justify-between py-8 text-sm text-slate-500">
+                <p>&copy; <%: DateTime.Now.Year %> Build me a project</p>
+                <p>Build, buy, sell, and learn together.</p>
+            </div>
+        </footer>
     </form>
 </body>
 </html>

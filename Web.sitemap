@@ -1,19 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-  <siteMapNode url=""
-			   title="Requests"
-			   description="">
-	  
-    <siteMapNode url=""
-				 title="Projects"
-				 description="" />
-	  
-    <siteMapNode url=""
-				 title="Categories"
-				 description="" />
-	  
-	<siteMapNode url=""
-				 title="Account"
-				 description=""/>
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url="~/Default.aspx" title="Home" description="Build Me A Project home page">
+    <siteMapNode url="~/Pages/public/Projects.aspx" title="Projects" description="Browse available projects">
+      <siteMapNode url="~/Pages/public/ProjectDetails.aspx" title="Project Details" description="View project details" />
+    </siteMapNode>
+    <siteMapNode url="~/Pages/client/Requests.aspx" title="Requests" description="Browse community project requests">
+      <siteMapNode url="~/Pages/client/PostRequest.aspx" title="Post a Request" description="Create a project request" />
+      <siteMapNode url="~/Pages/seller/SellerPitch.aspx" title="Submit a Pitch" description="Submit a seller pitch" />
+    </siteMapNode>
+    <siteMapNode url="~/Pages/public/Projects.aspx#categories" title="Categories" description="Browse project categories" />
+    <siteMapNode url="~/Pages/public/About.aspx" title="About" description="Learn about Build Me A Project" />
+    <siteMapNode url="~/Pages/public/Contact.aspx" title="Contact" description="Contact Build Me A Project" />
+    <siteMapNode url="~/Pages/public/Login.aspx" title="Account" description="Access your account">
+      <siteMapNode url="~/Pages/public/Register.aspx" title="Register" description="Create an account" />
+    </siteMapNode>
   </siteMapNode>
 </siteMap>

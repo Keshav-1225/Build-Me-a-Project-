@@ -124,12 +124,19 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="Pages\public\About.aspx" />
     <Content Include="Assets\CSS\input.css" />
     <Content Include="Assets\CSS\output.css" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Pages\public\Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Pages\public\Login.aspx" />
+    <Content Include="Pages\client\PostRequest.aspx" />
+    <Content Include="Pages\public\ProjectDetails.aspx" />
+    <Content Include="Pages\public\Projects.aspx" />
+    <Content Include="Pages\public\Register.aspx" />
+    <Content Include="Pages\client\Requests.aspx" />
+    <Content Include="Pages\seller\SellerPitch.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
@@ -166,17 +173,17 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
-    <Compile Include="About.aspx.designer.vb">
+    <Compile Include="Pages\public\About.aspx.designer.vb">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
-    <Compile Include="About.aspx.vb">
+    <Compile Include="Pages\public\About.aspx.vb">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.vb">
+    <Compile Include="Pages\public\Contact.aspx.designer.vb">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.vb">
+    <Compile Include="Pages\public\Contact.aspx.vb">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
@@ -209,10 +216,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Site.Master.designer.vb">
+    <Compile Include="Masters\Site.Master.designer.vb">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site.Master.vb">
+    <Compile Include="Masters\Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -223,11 +230,11 @@
     <Compile Include="ViewSwitcher.ascx.designer.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.vb">
+    <Compile Include="Masters\Site.Mobile.Master.vb">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Mobile.Master.designer.vb">
+    <Compile Include="Masters\Site.Mobile.Master.designer.vb">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -249,8 +256,8 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <Content Include="Site.Master" />
-    <Content Include="Site.Mobile.Master" />
+    <Content Include="Masters\Site.Master" />
+    <Content Include="Masters\Site.Mobile.Master" />
     <Content Include="ViewSwitcher.ascx" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
@@ -265,6 +272,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Images\" />
+    <Folder Include="Pages\admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

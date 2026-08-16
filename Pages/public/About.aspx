@@ -1,4 +1,4 @@
-﻿<%@ Page Title="About" Language="VB" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.vb" Inherits="BuildMeAProject.About" %>
+﻿<%@ Page Title="About" Language="VB" MasterPageFile="~/Masters/Site.Master" AutoEventWireup="true" CodeBehind="About.aspx.vb" Inherits="BuildMeAProject.About" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <main aria-labelledby="title" class="max-w-3xl">
