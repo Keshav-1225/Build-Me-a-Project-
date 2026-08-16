@@ -1,0 +1,35 @@
+<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Client.Master.vb" Inherits="BuildMeAProject.ClientMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Build Me A Project</title>
+    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body class="min-w-[1180px] bg-slate-50 font-sans text-slate-900 antialiased">
+    <form runat="server">
+        <header class="border-b border-slate-200 bg-white">
+            <nav class="mx-auto flex w-[1160px] items-center justify-between py-4" aria-label="Client navigation">
+                <a class="flex items-center gap-2.5" href="<%= ResolveUrl("~/Pages/client/Dashboard.aspx") %>" aria-label="Client dashboard">
+                    <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" />
+                    <span class="text-lg font-bold tracking-tight text-slate-950">Build<span class="text-blue-600">me</span> a project</span>
+                </a>
+                <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Dashboard.aspx") %>">Dashboard</a>
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Purchases.aspx") %>">Purchases</a>
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Requests.aspx") %>">Requests</a>
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Messages.aspx") %>">Messages</a>
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Notifications.aspx") %>">Notifications</a>
+                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Profile.aspx") %>">Profile</a>
+                    <a class="rounded-xl border border-slate-300 px-4 py-2 hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/BecomeSeller.aspx") %>">Become a seller</a>
+                    <a class="font-semibold text-blue-600 hover:text-blue-800" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log out</a>
+                </div>
+            </nav>
+        </header>
+        <div class="mx-auto w-[1160px]"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></div>
+        <footer class="mt-16 border-t border-slate-200 bg-white"><div class="mx-auto flex w-[1160px] items-center justify-between py-8 text-sm text-slate-500"><p>&copy; <%: DateTime.Now.Year %> Build me a project</p><p>Manage your projects and purchases in one place.</p></div></footer>
+    </form>
+</body>
+</html>

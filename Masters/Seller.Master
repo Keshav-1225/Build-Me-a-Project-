@@ -1,0 +1,33 @@
+<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Seller.Master.vb" Inherits="BuildMeAProject.SellerMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Seller Centre</title>
+    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
+</head>
+<body class="min-w-[1180px] bg-slate-50 font-sans text-slate-900 antialiased">
+    <form runat="server">
+        <div class="mx-auto grid min-h-screen w-[1180px] grid-cols-[250px_1fr] border-x border-slate-200 bg-white">
+            <aside class="bg-slate-950 px-5 py-7 text-slate-300">
+                <a class="flex items-center gap-2.5 text-white" href="<%= ResolveUrl("~/Pages/seller/Dashboard.aspx") %>"><asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" /><span class="text-lg font-bold">Seller centre</span></a>
+                <nav class="mt-10 space-y-1 text-sm font-medium" aria-label="Seller navigation">
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Dashboard.aspx") %>">Dashboard</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/MyProjects.aspx") %>">My Projects</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/AddProject.aspx") %>">Add Project</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Sales.aspx") %>">Sales</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Earnings.aspx") %>">Earnings</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Requests.aspx") %>">Project Requests</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/MyPitches.aspx") %>">My Pitches</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Messages.aspx") %>">Messages</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Notifications.aspx") %>">Notifications</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/seller/Settings.aspx") %>">Settings</a>
+                </nav>
+                <a class="mt-10 block rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-white hover:border-blue-500 hover:text-blue-300" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log out</a>
+            </aside>
+            <div class="flex min-h-screen flex-col"><main class="flex-1 p-10"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></main><footer class="border-t border-slate-200 px-10 py-6 text-sm text-slate-500">&copy; <%: DateTime.Now.Year %> Build me a project — Seller centre</footer></div>
+        </div>
+    </form>
+</body>
+</html>

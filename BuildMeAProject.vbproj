@@ -137,6 +137,9 @@
     <Content Include="Pages\public\Register.aspx" />
     <Content Include="Pages\client\Requests.aspx" />
     <Content Include="Pages\seller\SellerPitch.aspx" />
+    <Content Include="Masters\Client.Master" />
+    <Content Include="Masters\Seller.Master" />
+    <Content Include="Masters\Admin.Master" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
@@ -221,6 +224,18 @@
     </Compile>
     <Compile Include="Masters\Site.Master.vb">
       <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Client.Master.vb">
+      <DependentUpon>Client.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Seller.Master.vb">
+      <DependentUpon>Seller.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Masters\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.vb">

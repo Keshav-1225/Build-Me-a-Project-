@@ -42,11 +42,13 @@
                     <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" />
                     <span class="text-lg font-bold leading-none tracking-tight text-slate-950">Build<span class="text-blue-600">me</span> a project</span>
                 </a>
-                <div class="flex items-center gap-4 text-sm font-medium text-slate-600 sm:gap-7">
+                <div class="flex items-center gap-7 text-sm font-medium text-slate-600">
+                    <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Default.aspx") %>">Home</a>
                     <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Projects.aspx") %>">Projects</a>
                     <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Requests.aspx") %>">Requests</a>
-                    <a class="transition hover:text-blue-600" href="Projects.aspx#categories">Categories</a>
-                    <a class="rounded-full border border-slate-300 px-3 py-1.5 transition hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Account</a>
+                    <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Projects.aspx#categories") %>">Categories</a>
+                    <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log in</a>
+                    <a class="rounded-xl bg-blue-600 px-4 py-2 text-white transition hover:bg-blue-700" href="<%= ResolveUrl("~/Pages/public/Register.aspx") %>">Register</a>
                 </div>
             </nav>
         </header>

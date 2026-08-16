@@ -16,7 +16,7 @@
             </form>
             <div class="mt-7 flex justify-center gap-3">
                 <a class="rounded-xl bg-slate-950 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800" href="<%= ResolveUrl("~/Pages/public/Projects.aspx") %>">Explore projects</a>
-                <a class="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/PostRequest.aspx") %>">Post a request</a>
+                <a class="rounded-xl border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Login.aspx?returnUrl=/Pages/client/PostRequest.aspx") %>">Post a request</a>
             </div>
         </section>
 
@@ -65,7 +65,7 @@
             <p class="text-sm font-semibold text-blue-300">CAN'T FIND THE RIGHT FIT?</p>
             <h2 class="mx-auto mt-3 max-w-2xl text-4xl font-bold tracking-tight">Still didn’t find what you are looking for?</h2>
             <p class="mx-auto mt-5 max-w-2xl leading-7 text-slate-300">Post a request with your requirements and let the community build it for you.</p>
-            <a class="mt-8 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50" href="<%= ResolveUrl("~/Pages/client/PostRequest.aspx") %>">Post a request</a>
+            <a class="mt-8 inline-flex rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-blue-50" href="<%= ResolveUrl("~/Pages/public/Login.aspx?returnUrl=/Pages/client/PostRequest.aspx") %>">Post a request</a>
         </section>
     </main>
 </asp:Content>

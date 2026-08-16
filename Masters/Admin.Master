@@ -1,0 +1,29 @@
+<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Admin.Master.vb" Inherits="BuildMeAProject.AdminMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><%: Page.Title %> - Administration</title>
+    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
+</head>
+<body class="min-w-[1180px] bg-slate-100 font-sans text-slate-900 antialiased">
+    <form runat="server">
+        <div class="mx-auto grid min-h-screen w-[1180px] grid-cols-[250px_1fr] bg-white shadow-sm">
+            <aside class="bg-slate-950 px-5 py-7 text-slate-300">
+                <a class="text-lg font-bold text-white" href="<%= ResolveUrl("~/Pages/admin/Dashboard.aspx") %>">Build<span class="text-blue-300">me</span> Admin</a>
+                <nav class="mt-10 space-y-2 text-sm font-medium" aria-label="Administrator navigation">
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Dashboard.aspx") %>">Dashboard</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Users.aspx") %>">Users</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Projects.aspx") %>">Projects</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Orders.aspx") %>">Orders</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Reports.aspx") %>">Reports</a>
+                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Announcements.aspx") %>">Announcements</a>
+                </nav>
+                <a class="mt-10 block rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-white hover:border-blue-500 hover:text-blue-300" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log out</a>
+            </aside>
+            <div class="flex min-h-screen flex-col"><header class="border-b border-slate-200 px-10 py-6"><p class="text-sm font-semibold text-blue-600">ADMINISTRATION</p></header><main class="flex-1 p-10"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></main><footer class="border-t border-slate-200 px-10 py-6 text-sm text-slate-500">&copy; <%: DateTime.Now.Year %> Build me a project — Administration</footer></div>
+        </div>
+    </form>
+</body>
+</html>
