@@ -104,4 +104,4 @@ Any authenticated role → Logout → /login
 
 ## Implementation status
 
-Only the public master page and a small set of public/request/pitch pages currently exist. The route entries marked “planned” document the target navigation and must be backed by an ASPX page plus VB.NET authorization before they are linked as active features.
+All routes in this document now have their corresponding ASPX UI view. The current views are visual prototypes; server-side authentication, authorization, database CRUD, command handling, and final protected-route master-page enforcement remain required before protected routes or destructive actions are considered active.

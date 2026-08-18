@@ -42,7 +42,7 @@
                     <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" />
                     <span class="text-lg font-bold leading-none tracking-tight text-slate-950">Build<span class="text-blue-600">me</span> a project</span>
                 </a>
-                <div class="flex items-center gap-7 text-sm font-medium text-slate-600">
+                <div class="flex items-center gap-4 text-sm font-medium text-slate-600">
                     <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Default.aspx") %>">Home</a>
                     <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/public/Projects.aspx") %>">Projects</a>
                     <a class="transition hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Requests.aspx") %>">Requests</a>
