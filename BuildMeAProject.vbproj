@@ -124,18 +124,19 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\admin\Dashboard.aspx" />
     <Content Include="Pages\public\About.aspx" />
     <Content Include="Assets\CSS\input.css" />
     <Content Include="Assets\CSS\output.css" />
     <Content Include="Pages\public\Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Pages\public\Login.aspx" />
     <Content Include="Pages\client\PostRequest.aspx" />
+    <Content Include="Pages\public\Login.aspx" />
     <Content Include="Pages\public\ProjectDetails.aspx" />
     <Content Include="Pages\public\Projects.aspx" />
-    <Content Include="Pages\public\Register.aspx" />
     <Content Include="Pages\client\Requests.aspx" />
+    <Content Include="Pages\public\Register.aspx" />
     <Content Include="Pages\seller\SellerPitch.aspx" />
     <Content Include="Pages\client\Dashboard.aspx" />
     <Content Include="Pages\client\Purchases.aspx" />
@@ -160,7 +161,6 @@
     <Content Include="Pages\seller\Messages.aspx" />
     <Content Include="Pages\seller\Notifications.aspx" />
     <Content Include="Pages\seller\Settings.aspx" />
-    <Content Include="Pages\admin\Dashboard.aspx" />
     <Content Include="Pages\admin\Users.aspx" />
     <Content Include="Pages\admin\UserDetails.aspx" />
     <Content Include="Pages\admin\Projects.aspx" />
@@ -175,6 +175,7 @@
     <Content Include="Masters\Admin.Master" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="project.snippet" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -209,6 +210,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Pages\admin\Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Pages\public\About.aspx.designer.vb">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
@@ -271,6 +279,21 @@
       <DependentUpon>Admin.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="Pages\public\Login.aspx.designer.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\public\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\public\Register.aspx.designer.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\public\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Utils\connectDB.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -320,7 +343,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Images\" />
-    <Folder Include="Pages\admin\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

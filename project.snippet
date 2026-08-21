@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippets">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Script Alert Console</Title>
+      <Shortcut>alertlog</Shortcut>
+      <Description>Creates a script tag with alert and console.log</Description>
+      <Author>My Snippet</Author>
+    </Header>
+
+    <Snippet>
+      <Code Language="HTML">
+        <![CDATA[
+<script>
+    alert("$message$");
+    console.log("$message$");
+</script>
+        ]]>
+      </Code>
+
+      <Declarations>
+        <Literal>
+          <ID>message</ID>
+          <ToolTip>Message to display</ToolTip>
+          <Default>Hello World</Default>
+        </Literal>
+      </Declarations>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
