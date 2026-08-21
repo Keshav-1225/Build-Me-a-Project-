@@ -137,6 +137,7 @@
     <Content Include="Pages\public\Projects.aspx" />
     <Content Include="Pages\client\Requests.aspx" />
     <Content Include="Pages\public\Register.aspx" />
+    <Content Include="Pages\seller\Dashboard.aspx" />
     <Content Include="Pages\seller\SellerPitch.aspx" />
     <Content Include="Pages\client\Dashboard.aspx" />
     <Content Include="Pages\client\Purchases.aspx" />
@@ -150,7 +151,6 @@
     <Content Include="Pages\client\BecomeSeller.aspx" />
     <Content Include="Pages\client\Order.aspx" />
     <Content Include="Pages\client\OrderConfirmation.aspx" />
-    <Content Include="Pages\seller\Dashboard.aspx" />
     <Content Include="Pages\seller\MyProjects.aspx" />
     <Content Include="Pages\seller\AddProject.aspx" />
     <Content Include="Pages\seller\EditProject.aspx" />
@@ -292,6 +292,13 @@
     <Compile Include="Pages\public\Register.aspx.vb">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\seller\Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\seller\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Utils\connectDB.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
