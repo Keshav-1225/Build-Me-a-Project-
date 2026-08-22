@@ -125,13 +125,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pages\admin\Dashboard.aspx" />
+    <Content Include="Pages\client\Dashboard.aspx" />
+    <Content Include="Pages\client\PostRequest.aspx" />
     <Content Include="Pages\public\About.aspx" />
     <Content Include="Assets\CSS\input.css" />
     <Content Include="Assets\CSS\output.css" />
     <Content Include="Pages\public\Contact.aspx" />
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
-    <Content Include="Pages\client\PostRequest.aspx" />
     <Content Include="Pages\public\Login.aspx" />
     <Content Include="Pages\public\ProjectDetails.aspx" />
     <Content Include="Pages\public\Projects.aspx" />
@@ -139,7 +140,6 @@
     <Content Include="Pages\public\Register.aspx" />
     <Content Include="Pages\seller\Dashboard.aspx" />
     <Content Include="Pages\seller\SellerPitch.aspx" />
-    <Content Include="Pages\client\Dashboard.aspx" />
     <Content Include="Pages\client\Purchases.aspx" />
     <Content Include="Pages\client\PurchaseDetails.aspx" />
     <Content Include="Pages\client\RequestDetails.aspx" />
@@ -215,6 +215,20 @@
     </Compile>
     <Compile Include="Pages\admin\Dashboard.aspx.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\client\Dashboard.aspx.designer.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\client\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\client\PostRequest.aspx.designer.vb">
+      <DependentUpon>PostRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\client\PostRequest.aspx.vb">
+      <DependentUpon>PostRequest.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Pages\public\About.aspx.designer.vb">
@@ -300,6 +314,7 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="Utils\authorization.vb" />
     <Compile Include="Utils\connectDB.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -383,7 +398,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>63746</DevelopmentServerPort>
+          <DevelopmentServerPort>63747</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>https://localhost:44302/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

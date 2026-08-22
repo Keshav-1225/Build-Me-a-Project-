@@ -20,7 +20,7 @@ Public Class Login
             Using connection As OleDbConnection = connectDB.GetConnection()
                 connection.Open()
 
-                Dim checkQuery As String = "select [_id], [name], [username], [email], [role] from [user] where email=? AND password=?"
+                Dim checkQuery As String = "select [ID], [name], [username], [email], [role] from [user] where email=? AND password=?"
 
                 Using checkCommand As New OleDbCommand(checkQuery, connection)
                     checkCommand.Parameters.AddWithValue("@email", email)
@@ -28,7 +28,7 @@ Public Class Login
 
                     Using reader As OleDbDataReader = checkCommand.ExecuteReader()
                         If reader.Read Then  'LOGIN SUCCESS
-                            Session("UserID") = reader("_id").ToString()
+                            Session("UserID") = reader("ID").ToString()
                             Session("Name") = reader("name").ToString()
                             Session("Email") = reader("email").ToString()
                             Session("Role") = reader("role").ToString()
