@@ -38,11 +38,11 @@ Public Class PostRequest
 
             Using connection As OleDbConnection = connectDB.GetConnection()
                 connection.Open()
-                Dim checkUserQry As String = "SELECT * from user where ID=?"
+                Dim checkUserQry As String = "SELECT * from [user] where ID=?"
                 Using checkUserCommand As New OleDbCommand(checkUserQry, connection)
                     checkUserCommand.Parameters.AddWithValue("@userID", clientID)
                     Dim count As Integer = Convert.ToInt32(checkUserCommand.ExecuteScalar())
-                    If count > 0 Then
+                    If count < 0 Then
                         Throw New Exception("Unable to get the client from the session")
                     End If
 

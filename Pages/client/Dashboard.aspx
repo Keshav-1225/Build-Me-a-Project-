@@ -272,7 +272,7 @@
                     ID="lnkViewRequests"
                     runat="server"
                     Text="View my requests"
-                    NavigateUrl="~/Pages/client/Requests.aspx"
+                    NavigateUrl="~/Pages/client/MyRequests.aspx"
                     CssClass="mt-3 block text-center text-sm font-semibold text-blue-300" />
 
             </asp:Panel>
