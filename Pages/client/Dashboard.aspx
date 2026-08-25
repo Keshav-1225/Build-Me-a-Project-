@@ -275,6 +275,9 @@
                     NavigateUrl="~/Pages/client/MyRequests.aspx"
                     CssClass="mt-3 block text-center text-sm font-semibold text-blue-300" />
 
+                <br />
+                <asp:Label ID="ErrLabel" runat="server"></asp:Label>
+
             </asp:Panel>
 
         </asp:Panel>

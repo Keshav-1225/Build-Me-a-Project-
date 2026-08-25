@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class Dashboard2
+Partial Public Class AddProject
 
     '''<summary>
     '''pnlMain control.
@@ -23,22 +23,76 @@ Partial Public Class Dashboard2
     Protected WithEvents pnlMain As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblDashboardType control.
+    '''lblPageType control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblDashboardType As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPageType As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''WelcomeLabel control.
+    '''lblPageTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents WelcomeLabel As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPageTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''pnlForm control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlForm As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlFields control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlFields As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''pnlTitle control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlTitle As Global.System.Web.UI.WebControls.Panel
+
+    '''<summary>
+    '''lblProjectTitle control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lblProjectTitle As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''txtProjectTitle control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txtProjectTitle As Global.System.Web.UI.WebControls.TextBox
+
+    '''<summary>
+    '''pnlDescription control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents pnlDescription As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
     '''lblDescription control.
@@ -50,337 +104,220 @@ Partial Public Class Dashboard2
     Protected WithEvents lblDescription As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlStatistics control.
+    '''txtDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlStatistics As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents txtDescription As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''pnlPurchases control.
+    '''pnlCategoryPrice control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlPurchases As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pnlCategoryPrice As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblPurchasesTitle control.
+    '''pnlCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblPurchasesTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlCategory As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblPurchasesCount control.
+    '''lblCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblPurchasesCount As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlRequests control.
+    '''ddlCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlRequests As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents ddlCategory As Global.System.Web.UI.WebControls.DropDownList
 
     '''<summary>
-    '''lblRequestsTitle control.
+    '''pnlPrice control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblRequestsTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlPrice As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblRequestsCount control.
+    '''lblPrice control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblRequestsCount As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblPrice As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlPitches control.
+    '''txtPrice control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlPitches As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents txtPrice As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lblPitchesTitle control.
+    '''pnlTechStack control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblPitchesTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlTechStack As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblPitchesCount control.
+    '''lblTechStack control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblPitchesCount As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblTechStack As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlMessages control.
+    '''txtTechStack control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlMessages As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents txtTechStack As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lblMessagesTitle control.
+    '''pnlGithubURL control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblMessagesTitle As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents pnlGithubURL As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblMessagesCount control.
+    '''lblGithubURL control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblMessagesCount As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblGithubURL As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlDashboardContent control.
+    '''txtGitHubURL control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlDashboardContent As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents txtGitHubURL As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''pnlRecentlyViewed control.
+    '''pnlSetupInstructions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlRecentlyViewed As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents pnlSetupInstructions As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''pnlRecentlyViewedHeader control.
+    '''lblSetupInstructions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlRecentlyViewedHeader As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblSetupInstructions As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblRecentlyViewed control.
+    '''txtSetupInstructions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblRecentlyViewed As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents txtSetupInstructions As Global.System.Web.UI.WebControls.TextBox
 
     '''<summary>
-    '''lnkExploreProjects control.
+    '''pnlScreenshots control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lnkExploreProjects As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents pnlScreenshots As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''pnlProjectCards control.
+    '''lblScreenshotsTitle control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlProjectCards As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblScreenshotsTitle As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlProject1 control.
+    '''lblScreenshotsDescription control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlProject1 As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblScreenshotsDescription As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''pnlProject1Image control.
+    '''fuScreenshots control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlProject1Image As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents fuScreenshots As Global.System.Web.UI.WebControls.FileUpload
 
     '''<summary>
-    '''pnlProject1Details control.
+    '''lblScreenshotInfo control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlProject1Details As Global.System.Web.UI.WebControls.Panel
+    Protected WithEvents lblScreenshotInfo As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblProject1Name control.
+    '''lblMessage control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblProject1Name As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblMessage As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
-    '''lblProject1Tech control.
+    '''btnPublishProject control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblProject1Tech As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject1Price control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Price As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''pnlProject2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject2 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlProject2Image control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject2Image As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlProject2Details control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject2Details As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblProject2Name control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject2Name As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject2Tech control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject2Tech As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject2Price control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject2Price As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''pnlQuickAction control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlQuickAction As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblQuickActionTitle control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblQuickActionTitle As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProjectIdea control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProjectIdea As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblQuickActionDescription control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblQuickActionDescription As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lnkCreateRequest control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkCreateRequest As Global.System.Web.UI.WebControls.HyperLink
-
-    '''<summary>
-    '''lnkViewRequests control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lnkViewRequests As Global.System.Web.UI.WebControls.HyperLink
+    Protected WithEvents btnPublishProject As Global.System.Web.UI.WebControls.Button
 
     '''<summary>
     '''ErrLabel control.

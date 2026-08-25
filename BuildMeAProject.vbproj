@@ -124,7 +124,11 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Pages\admin\AddProject.aspx" />
+    <Content Include="Pages\admin\AddUser.aspx" />
+    <Content Include="Pages\admin\EditUser.aspx" />
     <Content Include="Pages\admin\Dashboard.aspx" />
+    <Content Include="Pages\admin\Users.aspx" />
     <Content Include="Pages\client\Dashboard.aspx" />
     <Content Include="Pages\client\MyRequests.aspx" />
     <Content Include="Pages\client\PostRequest.aspx" />
@@ -161,7 +165,6 @@
     <Content Include="Pages\seller\Messages.aspx" />
     <Content Include="Pages\seller\Notifications.aspx" />
     <Content Include="Pages\seller\Settings.aspx" />
-    <Content Include="Pages\admin\Users.aspx" />
     <Content Include="Pages\admin\UserDetails.aspx" />
     <Content Include="Pages\admin\Projects.aspx" />
     <Content Include="Pages\admin\ProjectDetails.aspx" />
@@ -210,11 +213,39 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.vb" />
     <Compile Include="App_Start\RouteConfig.vb" />
+    <Compile Include="Pages\admin\AddProject.aspx.designer.vb">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\AddProject.aspx.vb">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\admin\AddUser.aspx.designer.vb">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\AddUser.aspx.vb">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\admin\EditUser.aspx.designer.vb">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\EditUser.aspx.vb">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Pages\admin\Dashboard.aspx.designer.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\admin\Dashboard.aspx.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\admin\Users.aspx.designer.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\Users.aspx.vb">
+      <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Pages\client\Dashboard.aspx.designer.vb">
@@ -321,7 +352,7 @@
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
-    <Compile Include="Utils\authorization.vb" />
+    <Compile Include="Utils\AuthHelper.vb" />
     <Compile Include="Utils\connectDB.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
@@ -372,6 +403,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\Images\" />
+    <Folder Include="Uploads\Screenshots\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

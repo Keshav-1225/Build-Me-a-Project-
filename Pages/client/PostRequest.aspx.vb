@@ -35,7 +35,7 @@ Public Class PostRequest
             Else
                 budget = Convert.ToInt32(txtBudget.Text)
             End If
-
+            ' Database connection adn communication -----------------------------------------------------
             Using connection As OleDbConnection = connectDB.GetConnection()
                 connection.Open()
                 Dim checkUserQry As String = "SELECT * from [user] where ID=?"

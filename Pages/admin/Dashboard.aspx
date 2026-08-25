@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Masters/Admin.Master" CodeBehind="Dashboard.aspx.vb" Inherits="BuildMeAProject.Dashboard" %>
-<!--ADMIN DASHBOARD FRONTEND-->
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+<!--ADMIN DASHBOARD FRONTEND-->
 
     <asp:Label
         ID="lblOverview"

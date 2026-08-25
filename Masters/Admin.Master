@@ -1,29 +1,193 @@
-<%@ Master Language="VB" AutoEventWireup="true" CodeBehind="Admin.Master.vb" Inherits="BuildMeAProject.AdminMaster" %>
+<%@ Master Language="VB" AutoEventWireup="true"
+    CodeBehind="Admin.Master.vb"
+    Inherits="BuildMeAProject.AdminMaster" %>
 
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head runat="server">
+
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - Administration</title>
-    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
+
+    <title>
+        <%: Page.Title %> - Administration
+    </title>
+
+    <link
+        href="<%= ResolveUrl("~/Assets/CSS/output.css") %>"
+        rel="stylesheet" />
+
 </head>
+
 <body class="w-full bg-slate-100 font-sans text-slate-900 antialiased">
-    <form runat="server">
-        <div class="mx-auto grid min-h-screen w-[1180px] grid-cols-[250px_1fr] bg-white shadow-sm">
-            <aside class="bg-slate-950 px-5 py-7 text-slate-300">
-                <a class="text-lg font-bold text-white" href="<%= ResolveUrl("~/Pages/admin/Dashboard.aspx") %>">Build<span class="text-blue-300">me</span> Admin</a>
-                <nav class="mt-10 space-y-2 text-sm font-medium" aria-label="Administrator navigation">
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Dashboard.aspx") %>">Dashboard</a>
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Users.aspx") %>">Users</a>
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Projects.aspx") %>">Projects</a>
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Orders.aspx") %>">Orders</a>
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Reports.aspx") %>">Reports</a>
-                    <a class="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" href="<%= ResolveUrl("~/Pages/admin/Announcements.aspx") %>">Announcements</a>
-                </nav>
-                <a class="mt-10 block rounded-xl border border-slate-700 px-4 py-3 text-sm font-semibold text-white hover:border-blue-500 hover:text-blue-300" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log out</a>
-            </aside>
-            <div class="flex min-h-screen flex-col"><header class="border-b border-slate-200 px-10 py-6"><p class="text-sm font-semibold text-blue-600">ADMINISTRATION</p></header><main class="flex-1 p-10"><asp:ContentPlaceHolder ID="MainContent" runat="server" /></main><footer class="border-t border-slate-200 px-10 py-6 text-sm text-slate-500">&copy; <%: DateTime.Now.Year %> Build me a project — Administration</footer></div>
-        </div>
+
+    <form
+        id="form1"
+        runat="server">
+
+        <!-- Main Layout -->
+
+        <asp:Panel
+            ID="pnlLayout"
+            runat="server"
+            CssClass="mx-auto grid min-h-screen w-[1180px] grid-cols-[250px_1fr] bg-white shadow-sm">
+
+
+            <!-- ============================================ -->
+            <!-- SIDEBAR -->
+            <!-- ============================================ -->
+
+            <asp:Panel
+                ID="pnlSidebar"
+                runat="server"
+                CssClass="bg-slate-950 px-5 py-7 text-slate-300">
+
+
+                <!-- Logo -->
+
+                <asp:HyperLink
+                    ID="lnkAdminLogo"
+                    runat="server"
+                    NavigateUrl="~/Pages/admin/Dashboard.aspx"
+                    CssClass="text-lg font-bold text-white">
+
+                    Build<span class="text-blue-300">me</span> Admin
+
+                </asp:HyperLink>
+
+
+                <!-- Navigation -->
+
+                <asp:Panel
+                    ID="pnlNavigation"
+                    runat="server"
+                    CssClass="mt-10 space-y-2 text-sm font-medium">
+
+                    <asp:HyperLink
+                        ID="lnkDashboard"
+                        runat="server"
+                        Text="Dashboard"
+                        NavigateUrl="~/Pages/admin/Dashboard.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                    <asp:HyperLink
+                        ID="lnkUsers"
+                        runat="server"
+                        Text="Users"
+                        NavigateUrl="~/Pages/admin/Users.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                    <asp:HyperLink
+                        ID="lnkAddProject"
+                        runat="server"
+                        Text="Add Project"
+                        NavigateUrl="~/Pages/admin/AddProject.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+                    
+                    <asp:HyperLink
+                        ID="lnkProjects"
+                        runat="server"
+                        Text="Projects"
+                        NavigateUrl="~/Pages/admin/Projects.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                    <asp:HyperLink
+                        ID="lnkOrders"
+                        runat="server"
+                        Text="Orders"
+                        NavigateUrl="~/Pages/admin/Orders.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                    <asp:HyperLink
+                        ID="lnkReports"
+                        runat="server"
+                        Text="Reports"
+                        NavigateUrl="~/Pages/admin/Reports.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                    <asp:HyperLink
+                        ID="lnkAnnouncements"
+                        runat="server"
+                        Text="Announcements"
+                        NavigateUrl="~/Pages/admin/Announcements.aspx"
+                        CssClass="block rounded-xl px-4 py-3 hover:bg-slate-800 hover:text-white" />
+
+                </asp:Panel>
+
+
+                <!-- Logout -->
+
+                <asp:Button
+                    ID="btnLogout"
+                    runat="server"
+                    Text="Log out"
+                    CssClass="mt-10 block w-full rounded-xl border border-slate-700 px-4 py-3 text-left text-sm font-semibold text-white hover:border-blue-500 hover:text-blue-300"
+                    OnClick="btnLogout_Click"
+                    CausesValidation="false" />
+
+            </asp:Panel>
+
+
+            <!-- ============================================ -->
+            <!-- RIGHT SIDE -->
+            <!-- ============================================ -->
+
+            <asp:Panel
+                ID="pnlRightSide"
+                runat="server"
+                CssClass="flex min-h-screen flex-col">
+
+
+                <!-- Header -->
+
+                <asp:Panel
+                    ID="pnlHeader"
+                    runat="server"
+                    CssClass="border-b border-slate-200 px-10 py-6">
+
+                    <asp:Label
+                        ID="lblAdministration"
+                        runat="server"
+                        Text="ADMINISTRATION"
+                        CssClass="text-sm font-semibold text-blue-600" />
+
+                </asp:Panel>
+
+
+                <!-- Page Content -->
+
+                <asp:Panel
+                    ID="pnlMain"
+                    runat="server"
+                    CssClass="flex-1 p-10">
+
+                    <asp:ContentPlaceHolder
+                        ID="MainContent"
+                        runat="server" />
+
+                </asp:Panel>
+
+
+                <!-- Footer -->
+
+                <asp:Panel
+                    ID="pnlFooter"
+                    runat="server"
+                    CssClass="border-t border-slate-200 px-10 py-6 text-sm text-slate-500">
+
+                    <asp:Label
+                        ID="lblCopyright"
+                        runat="server" />
+
+                </asp:Panel>
+
+            </asp:Panel>
+
+        </asp:Panel>
+
     </form>
+
 </body>
+
 </html>
