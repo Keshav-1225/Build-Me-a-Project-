@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Masters/Admin.Master"
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Masters/Admin.Master"
     CodeBehind="Users.aspx.vb" Inherits="BuildMeAProject.Users" %>
     <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -74,9 +74,6 @@
                     <asp:Repeater ID="rptUsers" runat="server" OnItemCommand="rptUsers_ItemCommand">
                         <ItemTemplate>
                             <tr>
-                                <td>
-                                    <asp:Label ID="Label1" runat="server"></asp:Label>
-                                </td>
                                 <td class="px-6 py-5 font-semibold">
                                     <asp:Label ID="lblName" runat="server" Text='<%# Eval("name")%>' />
                                 </td>
@@ -112,10 +109,6 @@
                                         Width="24px" Height="24px"
                                         OnClientClick="return confirm('Are you sure you want to delete this user?');" />
 
-                                </td>
-
-                                <td class="px-6 py-5">
-                                    &nbsp;
                                 </td>
                             </tr>
                         </ItemTemplate>

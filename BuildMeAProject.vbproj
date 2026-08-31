@@ -128,6 +128,8 @@
     <Content Include="Pages\admin\AddUser.aspx" />
     <Content Include="Pages\admin\EditUser.aspx" />
     <Content Include="Pages\admin\Dashboard.aspx" />
+    <Content Include="Pages\admin\ProjectDetails.aspx" />
+    <Content Include="Pages\admin\Projects.aspx" />
     <Content Include="Pages\admin\Users.aspx" />
     <Content Include="Pages\client\Dashboard.aspx" />
     <Content Include="Pages\client\MyRequests.aspx" />
@@ -166,8 +168,6 @@
     <Content Include="Pages\seller\Notifications.aspx" />
     <Content Include="Pages\seller\Settings.aspx" />
     <Content Include="Pages\admin\UserDetails.aspx" />
-    <Content Include="Pages\admin\Projects.aspx" />
-    <Content Include="Pages\admin\ProjectDetails.aspx" />
     <Content Include="Pages\admin\Orders.aspx" />
     <Content Include="Pages\admin\Reports.aspx" />
     <Content Include="Pages\admin\ReportDetails.aspx" />
@@ -239,6 +239,20 @@
     </Compile>
     <Compile Include="Pages\admin\Dashboard.aspx.vb">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\admin\ProjectDetails.aspx.designer.vb">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\ProjectDetails.aspx.vb">
+      <DependentUpon>ProjectDetails.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Pages\admin\Projects.aspx.designer.vb">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\admin\Projects.aspx.vb">
+      <DependentUpon>Projects.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="Pages\admin\Users.aspx.designer.vb">
@@ -354,6 +368,7 @@
     </Compile>
     <Compile Include="Utils\AuthHelper.vb" />
     <Compile Include="Utils\connectDB.vb" />
+    <Compile Include="Utils\ProjectViewModel.vb" />
     <Compile Include="ViewSwitcher.ascx.vb">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -5,16 +5,22 @@ Public Class Users
 
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         If Not IsPostBack Then
-            loadUsers()
+            loadUsers("SELECT [ID],[name],[email],[status],[role] FROM [user]")
         End If
     End Sub
 
     Protected Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
+        Dim search As String = txtSearch.Text.Trim()
 
+        If String.IsNullOrWhiteSpace(search) Then
+            loadUsers("SELECT [ID],[name],[email],[status],[role] FROM [user]")
+        End If
+        Dim query As String = $"SELECT [ID], [name], [email], [status], [role] FROM [user] where [name] LIKE '%{search}%' OR [email] LIKE '%{search}%' OR [username] LIKE '%{search}%'"
+
+        loadUsers(query)
     End Sub
 
-    Private Sub loadUsers()
-        Dim query As String = "SELECT [ID],[name],[email],[status],[role] FROM [user]"
+    Private Sub loadUsers(query As String)
         Try
             Using connection As OleDbConnection = connectDB.GetConnection()
                 Try
@@ -27,7 +33,7 @@ Public Class Users
                         End Using
                     End Using
                 Catch ex As Exception
-
+                    lblMessage.Text = ex.Message
                 End Try
             End Using
         Catch ex As Exception
@@ -41,7 +47,7 @@ Public Class Users
             Response.Redirect("~/Pages/admin/editUser.aspx?id=" & userID)
         ElseIf e.CommandName = "DeleteUser" Then
             DeleteUser(userID)
-            loadUsers()
+            loadUsers("SELECT [ID],[name],[email],[status],[role] FROM [user]")
         End If
     End Sub
 

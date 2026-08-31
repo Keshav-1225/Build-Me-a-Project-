@@ -222,81 +222,88 @@
 
                 <!-- Project 1 -->
 
-                <asp:Panel
-                    ID="pnlProject1"
-                    runat="server"
-                    CssClass="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg">
-
-                    <asp:Panel
-                        ID="pnlProject1Image"
-                        runat="server"
-                        CssClass="flex aspect-[16/9] items-end bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-5">
-
-                        <asp:Label
-                            ID="lblProject1Badge"
-                            runat="server"
-                            Text="AI powered"
-                            CssClass="rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur" />
-
-                    </asp:Panel>
-
-                    <asp:Panel
-                        ID="pnlProject1Details"
-                        runat="server"
-                        CssClass="p-6">
+                <asp:Repeater ID="rptProjectCard" runat="server">
+                    <ItemTemplate>
 
                         <asp:Panel
-                            ID="pnlProject1Heading"
+                            ID="pnlProject1"
                             runat="server"
-                            CssClass="flex items-start justify-between gap-3">
+                            CssClass="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg">
 
-                            <asp:Label
-                                ID="lblProject1Name"
+                            <asp:Panel
+                                ID="pnlProject1Image"
                                 runat="server"
-                                Text="Smart study planner"
-                                CssClass="font-bold text-slate-950" />
+                                CssClass="flex aspect-[16/9] items-end bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-5">
 
-                            <asp:Label
-                                ID="lblProject1Price"
+
+                                <asp:Label
+                                    ID="lblProject1Badge"
+                                    runat="server"
+                                    Text='<%# Eval("category") %>'
+                                    CssClass="rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur" />
+
+                            </asp:Panel>
+
+                            <asp:Panel
+                                ID="pnlProject1Details"
                                 runat="server"
-                                Text="₹499"
-                                CssClass="whitespace-nowrap text-sm font-bold text-slate-950" />
+                                CssClass="p-6">
+
+                                <asp:Panel
+                                    ID="pnlProject1Heading"
+                                    runat="server"
+                                    CssClass="flex items-start justify-between gap-3">
+
+                                    <asp:Label
+                                        ID="lblProjectName"
+                                        runat="server"
+                                        Text='<%# Eval("title") %>'
+                                        CssClass="font-bold text-slate-950" />
+
+                                    <asp:Label
+                                        ID="lblProject1Price"
+                                        runat="server"
+                                        Text='<%# Eval("price") %>'
+                                        CssClass="whitespace-nowrap text-sm font-bold text-slate-950" />
+
+                                </asp:Panel>
+
+                                <asp:Label
+                                    ID="lblProject1Description"
+                                    runat="server"
+                                    Text='<%# Eval("description") %>'
+                                    CssClass="mt-3 block text-sm leading-6 text-slate-600" />
+
+                                <asp:Panel
+                                    ID="pnlProject1Meta"
+                                    runat="server"
+                                    CssClass="mt-5 flex items-center justify-between">
+
+                                    <asp:Label
+                                        ID="lblProject1Rating"
+                                        runat="server"
+                                        Text="★"&'<%# Eval("rating") %>'
+                                        CssClass="text-sm font-medium text-amber-500" />
+
+                                    <asp:Label
+                                        ID="lblProject1Tech"
+                                        runat="server"
+                                        Text='<%# Eval("techStack") %>'
+                                        CssClass="text-xs font-medium text-slate-500" />
+
+                                </asp:Panel>
+
+                            </asp:Panel>
 
                         </asp:Panel>
-
-                        <asp:Label
-                            ID="lblProject1Description"
-                            runat="server"
-                            Text="Plan coursework, stay on track, and get smart study recommendations."
-                            CssClass="mt-3 block text-sm leading-6 text-slate-600" />
-
-                        <asp:Panel
-                            ID="pnlProject1Meta"
-                            runat="server"
-                            CssClass="mt-5 flex items-center justify-between">
-
-                            <asp:Label
-                                ID="lblProject1Rating"
-                                runat="server"
-                                Text="★ 3.7"
-                                CssClass="text-sm font-medium text-amber-500" />
-
-                            <asp:Label
-                                ID="lblProject1Tech"
-                                runat="server"
-                                Text="AI · React"
-                                CssClass="text-xs font-medium text-slate-500" />
-
-                        </asp:Panel>
-
-                    </asp:Panel>
-
-                </asp:Panel>
+                    </ItemTemplate>
+                </asp:Repeater>
 
 
                 <!-- Project 2 -->
 
-                <asp:Panel
+<!-- 
+                    <asp:Panel
                     ID="pnlProject2"
                     runat="server"
                     CssClass="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 transition hover:-translate-y-1 hover:shadow-lg">
@@ -367,9 +374,9 @@
 
                 </asp:Panel>
 
-
+    -->
                 <!-- Project 3 -->
-
+<!--
                 <asp:Panel
                     ID="pnlProject3"
                     runat="server"
@@ -440,6 +447,7 @@
                     </asp:Panel>
 
                 </asp:Panel>
+    -->
 
             </asp:Panel>
 

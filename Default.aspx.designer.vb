@@ -275,103 +275,13 @@ Partial Public Class _Default
     Protected WithEvents pnlProjectCards As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''pnlProject1 control.
+    '''rptProjectCard control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents pnlProject1 As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlProject1Image control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject1Image As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblProject1Badge control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Badge As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''pnlProject1Details control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject1Details As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''pnlProject1Heading control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject1Heading As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblProject1Name control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Name As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject1Price control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Price As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject1Description control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Description As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''pnlProject1Meta control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents pnlProject1Meta As Global.System.Web.UI.WebControls.Panel
-
-    '''<summary>
-    '''lblProject1Rating control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Rating As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblProject1Tech control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblProject1Tech As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents rptProjectCard As Global.System.Web.UI.WebControls.Repeater
 
     '''<summary>
     '''pnlProject2 control.
