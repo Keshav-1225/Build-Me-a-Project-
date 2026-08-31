@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Masters/Site.Master"
+   <%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Masters/Site.Master"
     AutoEventWireup="true" CodeBehind="Default.aspx.vb"
     Inherits="BuildMeAProject._Default" %>
 
@@ -233,14 +233,21 @@
                             <asp:Panel
                                 ID="pnlProject1Image"
                                 runat="server"
-                                CssClass="flex aspect-[16/9] items-end bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-5">
+                                CssClass="relative flex aspect-[16/9] items-end bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-5 overflow-hidden">
 
+                                <asp:Image
+                                    ID="imgProject"
+                                    runat="server"
+                                    ImageUrl='<%# Eval("firstImageUrl") %>'
+                                    Visible='<%# Eval("hasImage") %>'
+                                    AlternateText='<%# Eval("title") %>'
+                                    CssClass="absolute inset-0 h-full w-full object-cover" />
 
                                 <asp:Label
                                     ID="lblProject1Badge"
                                     runat="server"
                                     Text='<%# Eval("category") %>'
-                                    CssClass="rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur" />
+                                    CssClass="relative z-10 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur" />
 
                             </asp:Panel>
 
@@ -260,11 +267,21 @@
                                         Text='<%# Eval("title") %>'
                                         CssClass="font-bold text-slate-950" />
 
+                                    <asp:Panel
+                                        ID="Panel1"
+                                        runat="server">
+                                        
+                                    <asp:Label
+                                        ID="lblProjectPrice"
+                                        runat="server"
+                                        Text="₹"
+                                        CssClass="whitespace-nowrap text-sm font-bold text-slate-950" />
                                     <asp:Label
                                         ID="lblProject1Price"
                                         runat="server"
                                         Text='<%# Eval("price") %>'
                                         CssClass="whitespace-nowrap text-sm font-bold text-slate-950" />
+                                    </asp:Panel>
 
                                 </asp:Panel>
 
@@ -282,13 +299,13 @@
                                     <asp:Label
                                         ID="lblProject1Rating"
                                         runat="server"
-                                        Text="★"&'<%# Eval("rating") %>'
+                                        Text='<%# Eval("rating") %>'
                                         CssClass="text-sm font-medium text-amber-500" />
 
                                     <asp:Label
                                         ID="lblProject1Tech"
                                         runat="server"
-                                        Text='<%# Eval("techStack") %>'
+                                        Text='<%# Eval("technologyList") %>'
                                         CssClass="text-xs font-medium text-slate-500" />
 
                                 </asp:Panel>
