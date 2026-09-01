@@ -43,13 +43,13 @@
                     runat="server"
                     CssClass="aspect-[16/9] rounded-3xl bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-8">
 
-                    <asp:Repeater ID="Repeater1" runat="server">
+                    <asp:Repeater ID="rptImages" runat="server">
                         <ItemTemplate>
 
                             <asp:Image ID="projectImage"
                                 runat="server"
-                                ImageUrl='<%# ResolveUrl(Eval("image").ToString()) %>'
-                                AlternateText='<%# Eval("title") %>'
+                                ImageUrl='<%# ResolveUrl(Container.DataItem) %>'
+                                AlternateText='<%# lblProjectName.Text %>'
                                 CssClass="project-slide absolute inset-0 h-full w-full object-cover"/>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -77,7 +77,7 @@
                             runat="server">
 
                             <asp:Label
-                                ID="lblProjectType"
+                                ID="lblCategory"
                                 runat="server"
                                 Text="CATEGORY"
                                 CssClass="text-sm font-semibold text-blue-600" />
@@ -90,12 +90,13 @@
 
                         </asp:Panel>
 
-
+                        <asp:HyperLink ID="HyperLink1" runat="server">
                         <asp:Label
                             ID="lblRating"
                             runat="server"
-                            Text="★ 3.7 (24)"
+                            Text="★ "
                             CssClass="text-lg font-semibold text-amber-500" />
+                        </asp:HyperLink>
 
                     </asp:Panel>
 
@@ -105,7 +106,7 @@
                     <asp:Label
                         ID="lblProjectDescription"
                         runat="server"
-                        Text="A thoughtful study companion that creates focused plans, tracks progress, and helps students stay consistent."
+                        Text="Description"
                         CssClass="mt-6 block max-w-3xl text-lg leading-8 text-slate-600" />
 
 
@@ -114,36 +115,18 @@
                     <asp:Label
                         ID="lblIncludedTitle"
                         runat="server"
-                        Text="What’s included"
+                        Text="Setup Instructions"
                         CssClass="mt-10 block text-2xl font-bold" />
 
                     <asp:Panel
                         ID="pnlIncluded"
                         runat="server"
-                        CssClass="mt-4 grid grid-cols-2 gap-3 text-slate-600">
+                        CssClass="mt-4 flex gap-3 text-slate-600">
 
                         <asp:Label
-                            ID="lblFeature1"
+                            ID="lblSetupInstructions"
                             runat="server"
                             Text="✓ Personal study schedules"
-                            CssClass="block" />
-
-                        <asp:Label
-                            ID="lblFeature2"
-                            runat="server"
-                            Text="✓ Goal and progress tracking"
-                            CssClass="block" />
-
-                        <asp:Label
-                            ID="lblFeature3"
-                            runat="server"
-                            Text="✓ AI study suggestions"
-                            CssClass="block" />
-
-                        <asp:Label
-                            ID="lblFeature4"
-                            runat="server"
-                            Text="✓ Setup documentation"
                             CssClass="block" />
 
                     </asp:Panel>
@@ -162,23 +145,16 @@
                         runat="server"
                         CssClass="mt-4 flex gap-2">
 
-                        <asp:Label
-                            ID="lblTechReact"
-                            runat="server"
-                            Text="React"
-                            CssClass="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700" />
+                        <asp:Repeater ID="rptTechnologies" runat="server">
+                            <ItemTemplate>
 
                         <asp:Label
-                            ID="lblTechNode"
+                            ID="lblTech"
                             runat="server"
-                            Text="Node.js"
+                            Text='<%# Container.DataItem %>'
                             CssClass="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700" />
-
-                        <asp:Label
-                            ID="lblTechAI"
-                            runat="server"
-                            Text="AI / ML"
-                            CssClass="rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700" />
+                            </ItemTemplate>
+                        </asp:Repeater>
 
                     </asp:Panel>
 

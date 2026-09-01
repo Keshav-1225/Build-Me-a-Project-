@@ -59,13 +59,13 @@ Partial Public Class ProjectDetails1
     Protected WithEvents pnlProjectPreview As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''Repeater1 control.
+    '''rptImages control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents Repeater1 As Global.System.Web.UI.WebControls.Repeater
+    Protected WithEvents rptImages As Global.System.Web.UI.WebControls.Repeater
 
     '''<summary>
     '''pnlProjectInfo control.
@@ -95,13 +95,13 @@ Partial Public Class ProjectDetails1
     Protected WithEvents pnlProjectTitle As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblProjectType control.
+    '''lblCategory control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblProjectType As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblCategory As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblProjectName control.
@@ -111,6 +111,15 @@ Partial Public Class ProjectDetails1
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblProjectName As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''HyperLink1 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents HyperLink1 As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
     '''lblRating control.
@@ -149,40 +158,13 @@ Partial Public Class ProjectDetails1
     Protected WithEvents pnlIncluded As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblFeature1 control.
+    '''lblSetupInstructions control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblFeature1 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblFeature2 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblFeature2 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblFeature3 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblFeature3 As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblFeature4 control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblFeature4 As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents lblSetupInstructions As Global.System.Web.UI.WebControls.Label
 
     '''<summary>
     '''lblTechStackTitle control.
@@ -203,31 +185,13 @@ Partial Public Class ProjectDetails1
     Protected WithEvents pnlTechStack As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
-    '''lblTechReact control.
+    '''rptTechnologies control.
     '''</summary>
     '''<remarks>
     '''Auto-generated field.
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
-    Protected WithEvents lblTechReact As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblTechNode control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTechNode As Global.System.Web.UI.WebControls.Label
-
-    '''<summary>
-    '''lblTechAI control.
-    '''</summary>
-    '''<remarks>
-    '''Auto-generated field.
-    '''To modify move field declaration from designer file to code-behind file.
-    '''</remarks>
-    Protected WithEvents lblTechAI As Global.System.Web.UI.WebControls.Label
+    Protected WithEvents rptTechnologies As Global.System.Web.UI.WebControls.Repeater
 
     '''<summary>
     '''pnlPurchase control.
