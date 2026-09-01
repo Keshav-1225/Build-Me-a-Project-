@@ -1,4 +1,4 @@
-   <%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Masters/Site.Master"
+<%@ Page Title="Home Page" Language="VB" MasterPageFile="~/Masters/Site.Master"
     AutoEventWireup="true" CodeBehind="Default.aspx.vb"
     Inherits="BuildMeAProject._Default" %>
 
@@ -135,35 +135,35 @@
                     ID="lnkWebCategory"
                     runat="server"
                     Text="Web"
-                    NavigateUrl="#featured-projects"
+                    NavigateUrl="~/Pages/public/Projects.aspx?category=web"
                     CssClass="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-blue-600 hover:text-white hover:ring-blue-600" />
 
                 <asp:HyperLink
                     ID="lnkAppCategory"
                     runat="server"
                     Text="App"
-                    NavigateUrl="#featured-projects"
+                    NavigateUrl="~/Pages/public/Projects.aspx?category=app"
                     CssClass="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-blue-600 hover:text-white hover:ring-blue-600" />
 
                 <asp:HyperLink
                     ID="lnkPythonCategory"
                     runat="server"
                     Text="Python"
-                    NavigateUrl="#featured-projects"
+                    NavigateUrl="~/Pages/public/Projects.aspx?category=python"
                     CssClass="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-blue-600 hover:text-white hover:ring-blue-600" />
 
                 <asp:HyperLink
                     ID="lnkAiCategory"
                     runat="server"
                     Text="AI / ML"
-                    NavigateUrl="#featured-projects"
+                    NavigateUrl="~/Pages/public/Projects.aspx?category=ai"
                     CssClass="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-blue-600 hover:text-white hover:ring-blue-600" />
 
                 <asp:HyperLink
                     ID="lnkJavaCategory"
                     runat="server"
                     Text="Java"
-                    NavigateUrl="#featured-projects"
+                    NavigateUrl="~/Pages/public/Projects.aspx?q=java"
                     CssClass="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 transition hover:bg-blue-600 hover:text-white hover:ring-blue-600" />
 
             </asp:Panel>
@@ -220,7 +220,7 @@
                 CssClass="mt-8 grid grid-cols-3 gap-6">
 
 
-                <!-- Project 1 -->
+                <!-- Projects -->
 
                 <asp:Repeater ID="rptProjectCard" runat="server">
                     <ItemTemplate>
