@@ -1,4 +1,4 @@
-﻿Imports System.Data.OleDb
+Imports System.Data.OleDb
 Imports System.IO
 
 Public Class AddProject
@@ -36,7 +36,7 @@ Public Class AddProject
             'Database conn and communication
             Using connection As OleDbConnection = connectDB.GetConnection()
                 Dim insertSSqry As String = "INSERT into project_ss([ProjectID],[image]) VALUES (?,?)"
-                Dim insertProjectQry As String = "INSERT into project([title], [description], [rating], [SI], [tech_stack], [price], [userID], [githubURL]) VALUES (?,?,?,?,?,?,?,?)"
+                Dim insertProjectQry As String = "INSERT into project([title], [description], [rating], [SI], [tech_stack], [price], [userID], [githubURL],[status]) VALUES (?,?,?,?,?,?,?,?,?)"
                 Dim insertTechnologyQry As String = "INSERT INTO Technology([tech], [category]) VALUES(?,?)"
                 Dim ProjectID As Integer
                 Dim TechnologyID As Integer = 0
@@ -52,6 +52,7 @@ Public Class AddProject
                     insertProjectCommand.Parameters.AddWithValue("@price", price)
                     insertProjectCommand.Parameters.AddWithValue("@userID", userID)
                     insertProjectCommand.Parameters.AddWithValue("@githubURL", ghurl)
+                    insertProjectCommand.Parameters.AddWithValue("@status", "VISIBLE")
 
                     Dim rowsAffected As Integer = insertProjectCommand.ExecuteNonQuery()
                     If rowsAffected > 0 Then
@@ -77,9 +78,10 @@ Public Class AddProject
 
                                         ' INSERT IMAGES INTO PROJECT SS TABLE
                                         Try
+                                            Dim relativePath As String = "~/Uploads/Screenshots/" & uniqueFileName
                                             Using insertScreenshotCommand As New OleDbCommand(insertSSqry, connection)
                                                 insertScreenshotCommand.Parameters.AddWithValue("@ProjectID", ProjectID)
-                                                insertScreenshotCommand.Parameters.AddWithValue("@image", savePath)
+                                                insertScreenshotCommand.Parameters.AddWithValue("@image", relativePath)
                                                 Dim ImagerowsAffected As Integer = insertScreenshotCommand.ExecuteNonQuery()
                                                 If ImagerowsAffected <= 0 Then
                                                     Throw New Exception("Failed to insert Image")

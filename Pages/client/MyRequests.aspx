@@ -35,6 +35,11 @@
                     Text="Manage the projects you have requested and review developer pitches."
                     CssClass="mt-3 block text-slate-600" />
 
+                <asp:Label
+                    ID="lblMessage"
+                    runat="server"
+                    CssClass="mt-3 block text-sm text-red-600" />
+
             </asp:Panel>
 
         </asp:Panel>
@@ -129,12 +134,27 @@
                         NavigateUrl='<%# "~/Pages/client/RequestPitches.aspx?id=" & Eval("ID") %>'
                         CssClass="rounded-lg bg-blue-600 px-4 py-2 font-semibold text-white transition hover:bg-blue-700" />
 
-                    <asp:HyperLink
+                    <asp:ImageButton
                         ID="lnkEdit"
                         runat="server"
-                        Text="Edit"
+                        ImageUrl="~/Assets/Images/edit.gif"
+                        ToolTip="Edit request"
+                        Width="55px"
+                        Height="40px"
                         NavigateUrl='<%# "~/Pages/client/EditRequest.aspx?id=" & Eval("ID") %>'
                         CssClass="rounded-lg border border-slate-300 px-4 py-2 font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-slate-50" />
+
+                    <asp:ImageButton
+                        ID="btnDelete"
+                        runat="server"
+                        ImageUrl="~/Assets/Images/trash-bin.gif"
+                        With="40px"
+                        Height="40px"
+                        ToolTip="Delete Request"
+                        CommandName="DeleteRequest"
+                        CommandArgument='<%# Eval("ID") %>'
+                        OnClientClick="return confirm('Delete this project request? This cannot be undone.');"
+                        CssClass="rounded-lg border border-red-200 px-4 py-2 font-semibold text-red-600 transition hover:bg-red-50" />
 
                 </asp:Panel>
 

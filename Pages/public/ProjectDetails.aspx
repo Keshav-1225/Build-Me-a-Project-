@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Masters/Site.Master" CodeBehind="ProjectDetails.aspx.vb" Inherits="BuildMeAProject.ProjectDetails1" %>
+<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/Masters/Site.Master" CodeBehind="ProjectDetails.aspx.vb" Inherits="BuildMeAProject.ProjectDetails1" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Main Container -->
@@ -14,7 +14,7 @@
         <asp:HyperLink
             ID="lnkBackToProjects"
             runat="server"
-            Text="← Back to projects"
+            Text=" ← Back to projects"
             NavigateUrl="~/Pages/public/Projects.aspx"
             CssClass="text-sm font-semibold text-blue-600 hover:text-blue-800" />
 
@@ -41,7 +41,7 @@
                 <asp:Panel
                     ID="pnlProjectPreview"
                     runat="server"
-                    CssClass="aspect-[16/9] rounded-3xl bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-8">
+                    CssClass="relative overflow-hidden aspect-[16/9] rounded-3xl bg-gradient-to-br from-violet-500 via-blue-500 to-cyan-400 p-8 group cursor-pointer">
 
                     <asp:Repeater ID="rptImages" runat="server">
                         <ItemTemplate>
@@ -50,9 +50,30 @@
                                 runat="server"
                                 ImageUrl='<%# ResolveUrl(Container.DataItem) %>'
                                 AlternateText='<%# lblProjectName.Text %>'
-                                CssClass="project-slide absolute inset-0 h-full w-full object-cover"/>
+                                CssClass="project-slide absolute inset-0 h-full w-full object-cover transition-opacity duration-500 opacity-0 pointer-events-none"/>
                         </ItemTemplate>
                     </asp:Repeater>
+
+                    <!-- Slider Navigation Buttons -->
+                    <asp:Button ID="btnPrev"
+                        runat="server"
+                        Text="&#10094;"
+                        ToolTip="Previous image"
+                        CausesValidation="false"
+                        UseSubmitBehavior="false"
+                        OnClientClick="return false;"
+                        CssClass="absolute left-4 top-1/2 z-20 h-10 w-10 -translate-y-1/2 cursor-pointer rounded-full bg-black/40 text-white backdrop-blur transition hover:bg-black/70 focus:outline-none select-none" />
+                    <asp:Button ID="btnNext"
+                        runat="server"
+                        Text="&#10095;"
+                        ToolTip="Next image"
+                        CausesValidation="false"
+                        UseSubmitBehavior="false"
+                        OnClientClick="return false;"
+                        CssClass="absolute right-4 top-1/2 z-20 h-10 w-10 -translate-y-1/2 cursor-pointer rounded-full bg-black/40 text-white backdrop-blur transition hover:bg-black/70 focus:outline-none select-none" />
+
+                    <!-- Slider Indicators -->
+                    <div id="sliderIndicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
 
                 </asp:Panel>
 
@@ -96,14 +117,7 @@
                             runat="server"
                             Text="★ "
                             CssClass="text-lg font-semibold text-amber-500" />
-                        </asp:HyperLink>
-
-                    </asp:Panel>
-
-
-                    <!-- Description -->
-
-                    <asp:Label
+                        </asp:HyperLink></asp:Panel><!-- Description --><asp:Label
                         ID="lblProjectDescription"
                         runat="server"
                         Text="Description"
@@ -206,6 +220,7 @@
                     Text="Add to wishlist"
                     CssClass="mt-3 w-full rounded-xl border border-slate-300 py-3 text-sm font-semibold text-slate-700"
                     OnClick="btnWishlist_Click"
+                    OnClientClick="return confirm('project added to the cart')"
                     CausesValidation="false" />
 
 
@@ -252,5 +267,123 @@
         </asp:Panel>
 
     </asp:Panel>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var container = document.getElementById('<%= pnlProjectPreview.ClientID %>');
+            if (!container) return;
+
+            var slides = container.querySelectorAll('.project-slide');
+            var btnPrev = document.getElementById('<%= btnPrev.ClientID %>');
+            var btnNext = document.getElementById('<%= btnNext.ClientID %>');
+            var indicatorsContainer = document.getElementById('sliderIndicators');
+
+            if (!slides || slides.length === 0) {
+                if (btnPrev) btnPrev.style.display = 'none';
+                if (btnNext) btnNext.style.display = 'none';
+                return;
+            }
+
+            var currentIndex = 0;
+            var autoPlayInterval = null;
+            var isPaused = false;
+
+            function initSlider() {
+                slides.forEach(function (slide, idx) {
+                    if (idx === 0) {
+                        slide.classList.remove('opacity-0', 'pointer-events-none');
+                        slide.classList.add('opacity-100', 'z-10');
+                    } else {
+                        slide.classList.remove('opacity-100', 'z-10');
+                        slide.classList.add('opacity-0', 'pointer-events-none');
+                    }
+
+                    if (indicatorsContainer) {
+                        var dot = document.createElement('button');
+                        dot.type = 'button';
+                        dot.setAttribute('aria-label', 'Go to slide ' + (idx + 1));
+                        dot.className = 'h-2.5 transition-all rounded-full ' + (idx === 0 ? 'bg-white w-6' : 'bg-white/50 hover:bg-white/80 w-2.5');
+                        dot.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            goToSlide(idx);
+                            pauseAutoPlay();
+                        });
+                        indicatorsContainer.appendChild(dot);
+                    }
+                });
+
+                if (slides.length > 1) {
+                    startAutoPlay();
+                }
+            }
+
+            function goToSlide(index) {
+                slides[currentIndex].classList.remove('opacity-100', 'z-10');
+                slides[currentIndex].classList.add('opacity-0', 'pointer-events-none', 'z-0');
+
+                if (indicatorsContainer && indicatorsContainer.children[currentIndex]) {
+                    indicatorsContainer.children[currentIndex].className = 'h-2.5 w-2.5 rounded-full bg-white/50 hover:bg-white/80 transition-all';
+                }
+
+                currentIndex = (index + slides.length) % slides.length;
+
+                slides[currentIndex].classList.remove('opacity-0', 'pointer-events-none', 'z-0');
+                slides[currentIndex].classList.add('opacity-100', 'z-10');
+
+                if (indicatorsContainer && indicatorsContainer.children[currentIndex]) {
+                    indicatorsContainer.children[currentIndex].className = 'h-2.5 w-6 rounded-full bg-white transition-all';
+                }
+            }
+
+            function nextSlide() {
+                goToSlide(currentIndex + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentIndex - 1);
+            }
+
+            function startAutoPlay() {
+                if (autoPlayInterval) clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(function () {
+                    if (!isPaused) {
+                        nextSlide();
+                    }
+                }, 3000);
+            }
+
+            function pauseAutoPlay() {
+                isPaused = true;
+                if (autoPlayInterval) {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = null;
+                }
+            }
+
+            if (btnPrev) {
+                btnPrev.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    prevSlide();
+                    pauseAutoPlay();
+                });
+            }
+
+            if (btnNext) {
+                btnNext.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    nextSlide();
+                    pauseAutoPlay();
+                });
+            }
+
+            container.addEventListener('click', function () {
+                pauseAutoPlay();
+            });
+
+            initSlider();
+        });
+    </script>
 
 </asp:Content>

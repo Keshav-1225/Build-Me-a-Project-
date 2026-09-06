@@ -7,24 +7,36 @@
     <title><%: Page.Title %> - Build Me A Project</title>
     <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
     <link href="<%= ResolveUrl("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+    <style>
+        .client-account-menu { position: relative; }
+        .client-account-trigger { display: flex; cursor: pointer; align-items: center; gap: .25rem; border-radius: .75rem; padding: .5rem .75rem; }
+        .client-account-trigger:hover { background: #f1f5f9; color: #2563eb; }
+        .client-account-links { position: absolute; top: 100%; right: 0; z-index: 10; display: none; width: 11rem; border: 1px solid #e2e8f0; border-radius: .75rem; background: #fff; padding: .5rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%); }
+        .client-account-menu:hover .client-account-links { display: block; }
+    </style>
 </head>
 <body class="min-w-[1180px] bg-slate-50 font-sans text-slate-900 antialiased">
     <form runat="server">
         <header class="border-b border-slate-200 bg-white">
             <nav class="mx-auto flex w-[1160px] items-center justify-between py-4" aria-label="Client navigation">
-                <a class="flex items-center gap-2.5" href="<%= ResolveUrl("~/Pages/client/Dashboard.aspx") %>" aria-label="Client dashboard">
+                <asp:HyperLink ID="lnkBrand" runat="server" NavigateUrl="~/Pages/client/Dashboard.aspx" CssClass="flex items-center gap-2.5" ToolTip="Client dashboard">
                     <asp:Image ImageUrl="~/Assets/Images/logo.gif" runat="server" Height="30px" Width="30px" AlternateText="" />
                     <span class="text-lg font-bold tracking-tight text-slate-950">Build<span class="text-blue-600">me</span> a project</span>
-                </a>
+                </asp:HyperLink>
                 <div class="flex items-center gap-6 text-sm font-medium text-slate-600">
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Dashboard.aspx") %>">Dashboard</a>
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Purchases.aspx") %>">Purchases</a>
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Requests.aspx") %>">Requests</a>
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Messages.aspx") %>">Messages</a>
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Notifications.aspx") %>">Notifications</a>
-                    <a class="hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/Profile.aspx") %>">Profile</a>
-                    <a class="rounded-xl border border-slate-300 px-4 py-2 hover:border-blue-600 hover:text-blue-600" href="<%= ResolveUrl("~/Pages/client/BecomeSeller.aspx") %>">Become a seller</a>
-                    <a class="font-semibold text-blue-600 hover:text-blue-800" href="<%= ResolveUrl("~/Pages/public/Login.aspx") %>">Log out</a>
+                    <asp:HyperLink ID="lnkCart" runat="server" NavigateUrl="~/Pages/client/Order.aspx" CssClass="rounded-lg p-2 hover:bg-slate-100" ToolTip="Shopping cart">
+                        <asp:Image ID="imgCart" runat="server" ImageUrl="~/Assets/Images/Shopping-cart.gif" AlternateText="Shopping cart" Width="24px" Height="24px" />
+                    </asp:HyperLink>
+                    <asp:HyperLink ID="lnkBecomeSeller" runat="server" NavigateUrl="~/Pages/client/BecomeSeller.aspx" CssClass="rounded-xl border border-slate-300 px-4 py-2 hover:border-blue-600 hover:text-blue-600" Text="Become a seller" />
+                    <asp:Panel ID="pnlAccountMenu" runat="server" CssClass="client-account-menu">
+                        <asp:Label ID="lblAccountMenu" runat="server" CssClass="client-account-trigger" Text="Account &#9662;" />
+                        <asp:Panel ID="pnlAccountLinks" runat="server" CssClass="client-account-links">
+                            <asp:HyperLink ID="lnkDashboard" runat="server" NavigateUrl="~/Pages/client/Dashboard.aspx" CssClass="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-blue-600" Text="Dashboard" />
+                            <asp:HyperLink ID="lnkNotifications" runat="server" NavigateUrl="~/Pages/client/Notifications.aspx" CssClass="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-blue-600" Text="Notifications" />
+                            <asp:HyperLink ID="lnkProfile" runat="server" NavigateUrl="~/Pages/client/Profile.aspx" CssClass="block rounded-lg px-3 py-2 hover:bg-slate-100 hover:text-blue-600" Text="Profile" />
+                            <asp:HyperLink ID="lnkLogout" runat="server" NavigateUrl="~/Pages/public/Login.aspx" CssClass="block rounded-lg px-3 py-2 font-semibold text-blue-600 hover:bg-blue-50 hover:text-blue-800" Text="Log out" />
+                        </asp:Panel>
+                    </asp:Panel>
                 </div>
             </nav>
         </header>

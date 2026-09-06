@@ -65,4 +65,28 @@ Public Class MyRequests
         Return value.ToString()
     End Function
 
+    Protected Sub rptRequests_ItemCommand(source As Object, e As RepeaterCommandEventArgs) Handles rptRequests.ItemCommand
+        If e.CommandName <> "DeleteRequest" Then Return
+
+        Dim requestID As Integer
+        If Not Integer.TryParse(e.CommandArgument.ToString(), requestID) Then Return
+
+        Try
+            Using connection As OleDbConnection = connectDB.GetConnection()
+                connection.Open()
+                Using command As New OleDbCommand("DELETE FROM ProjectRequest WHERE ID = ? AND clientID = ?", connection)
+                    command.Parameters.AddWithValue("@requestID", requestID)
+                    command.Parameters.AddWithValue("@clientID", Convert.ToInt32(Session("UserID")))
+                    If command.ExecuteNonQuery() = 0 Then
+                        Throw New Exception("The request was not found or you do not have permission to delete it.")
+                    End If
+                End Using
+            End Using
+
+            LoadRequest()
+        Catch ex As Exception
+            lblMessage.Text = ex.Message
+        End Try
+    End Sub
+
 End Class

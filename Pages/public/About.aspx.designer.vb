@@ -12,4 +12,31 @@ Option Explicit On
 
 
 Partial Public Class About
+
+    '''<summary>
+    '''lnkExploreProjects control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkExploreProjects As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''lnkCreateAccount control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkCreateAccount As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
+    '''lnkGitHub control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkGitHub As Global.System.Web.UI.WebControls.HyperLink
 End Class

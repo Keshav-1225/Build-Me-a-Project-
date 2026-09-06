@@ -4,12 +4,12 @@ Public Class AdminMaster
     Protected WithEvents btnLogout As Global.System.Web.UI.WebControls.Button
 
     Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-        'If Session("UserID") Is Nothing Then
-        '    Response.Redirect("~/Pages/public/Login.aspx")
-        'End If
-        'If Session("Role") <> "admin" Then
-        '    Response.Redirect("~/Default.aspx")
-        'End If
+        If Session("UserID") Is Nothing Then
+            Response.Redirect("~/Pages/public/Login.aspx")
+        End If
+        If Session("Role") <> "admin" Then
+            Response.Redirect("~/Default.aspx")
+        End If
 
         AddHandler btnLogout.Click, AddressOf btnLogout_Click
     End Sub

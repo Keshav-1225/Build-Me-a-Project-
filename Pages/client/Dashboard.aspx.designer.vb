@@ -68,6 +68,15 @@ Partial Public Class Dashboard2
     Protected WithEvents pnlPurchases As Global.System.Web.UI.WebControls.Panel
 
     '''<summary>
+    '''lnkPurchases control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkPurchases As Global.System.Web.UI.WebControls.HyperLink
+
+    '''<summary>
     '''lblPurchasesTitle control.
     '''</summary>
     '''<remarks>
@@ -84,6 +93,15 @@ Partial Public Class Dashboard2
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents lblPurchasesCount As Global.System.Web.UI.WebControls.Label
+
+    '''<summary>
+    '''lnkMyRequest control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents lnkMyRequest As Global.System.Web.UI.WebControls.HyperLink
 
     '''<summary>
     '''pnlRequests control.

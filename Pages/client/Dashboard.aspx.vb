@@ -13,6 +13,19 @@ Public Class Dashboard2
 
         WelcomeLabel.Text = "Welcome " & Session("Name").ToString() & ","
 
+        Try
+            Using connection As OleDbConnection = connectDB.GetConnection()
+                connection.Open()
+                Using command As New OleDbCommand("SELECT COUNT(*) FROM ([order] INNER JOIN order_item ON [order].ID = order_item.orderID) WHERE [order].buyerID = ? AND [order].order_status = ?", connection)
+                    command.Parameters.AddWithValue("@buyerID", Convert.ToInt32(Session("UserID")))
+                    command.Parameters.AddWithValue("@status", "paid")
+                    lblPurchasesCount.Text = Convert.ToInt32(command.ExecuteScalar()).ToString()
+                End Using
+            End Using
+        Catch ex As Exception
+            ErrLabel.Text = ex.Message
+        End Try
+
         ' Project Count
         Try
             Dim clientID As String = Session("UserID").ToString()
@@ -30,7 +43,6 @@ Public Class Dashboard2
         Catch ex As Exception
             ErrLabel.Text = ex.Message
         End Try
-        lblRequestsCount.Text = 123
     End Sub
 
 End Class

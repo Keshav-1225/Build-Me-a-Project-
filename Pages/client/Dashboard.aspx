@@ -35,22 +35,29 @@
                 runat="server"
                 CssClass="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
 
-                <asp:Label
-                    ID="lblPurchasesTitle"
-                    runat="server"
-                    Text="Purchases"
-                    CssClass="text-sm font-semibold text-slate-500" />
+                <asp:HyperLink ID="lnkPurchases" runat="server" NavigateUrl="~/Pages/client/Purchases.aspx" CssClass="block h-full rounded-xl hover:text-blue-600" ToolTip="View purchased projects">
+                    <asp:Label
+                        ID="lblPurchasesTitle"
+                        runat="server"
+                        Text="Purchases"
+                        CssClass="text-sm font-semibold text-slate-500" />
 
-                <asp:Label
-                    ID="lblPurchasesCount"
-                    runat="server"
-                    Text="08"
-                    CssClass="mt-3 block text-3xl font-bold" />
+                    <asp:Label
+                        ID="lblPurchasesCount"
+                        runat="server"
+                        Text="0"
+                        CssClass="mt-3 block text-3xl font-bold" />
+                </asp:HyperLink>
 
             </asp:Panel>
 
 
             <!-- My Requests -->
+            <asp:HyperLink
+                ID="lnkMyRequest"
+                runat="server"
+                NavigateUrl="~/Pages/client/MyRequests.aspx">
+
             <asp:Panel
                 ID="pnlRequests"
                 runat="server"
@@ -70,6 +77,7 @@
 
             </asp:Panel>
 
+            </asp:HyperLink>
 
             <!-- New Pitches -->
             <asp:Panel

@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%: Page.Title %> - BuildMeAProject</title>
-    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>" rel="stylesheet" />
+    <link href="<%= ResolveUrl("~/Assets/CSS/output.css") %>?v=slider-controls-1" rel="stylesheet" />
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
